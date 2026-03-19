@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChatGPT Exporter</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      width: 280px;
+      padding: 16px;
+      background: #1a1a1a;
+      color: #e5e5e5;
+    }
+
+    h1 {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    #status {
+      font-size: 12px;
+      min-height: 36px;
+      padding: 8px 10px;
+      background: #2a2a2a;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      line-height: 1.4;
+      color: #9ca3af;
+    }
+
+    #status.error  { color: #f87171; }
+    #status.success { color: #4ade80; }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #10a37f;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+
+    button:hover:not(:disabled) { background: #0d8c6d; }
+
+    button:disabled {
+      background: #374151;
+      color: #6b7280;
+      cursor: not-allowed;
+    }
+
+    .meta {
+      font-size: 11px;
+      color: #6b7280;
+      margin-top: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>ChatGPT → Markdown</h1>
+  <div id="status">現在のチャットをエクスポートできます。</div>
+  <button id="exportBtn">Markdownとして保存</button>
+  <p class="meta">chatgpt.com のみ対応</p>
+  <script src="popup.js"></script>
+</body>
+</html>
